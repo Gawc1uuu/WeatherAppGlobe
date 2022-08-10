@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/05c3bd34c6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="container-fluid second-container">
+      <div id="content" class="row">
+        <div class="col-md-4 main">
+          <div class="card shadow">
+            <div id="content1">
+              <form id="weatherForm">
+                <div
+                  class="row justify-content-center pt-md-5 pt-3 text-center"
+                >
+                  <div class="col-md-8 d-flex">
+                    <input
+                      class="form-control form-control-lg mx-md-2 mx-1"
+                      type="text"
+                      name="q"
+                      placeholder="Search for your city"
+                    /><button class="btn btn-primary btn-md-lg" type="submit">
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h1
+                class="card-title d-flex justify-content-between align-items-center"
+              >
+                <span class="cityName"></span
+                ><span class="text-muted fs-5 date"></span>
+              </h1>
+              <div
+                class="d-flex flex-column justify-content-center temperature"
+              >
+                <p class="card-text text-center display-1 fw-bold">
+                  <span class="temp"></span><sup>&#176;</sup>C
+                </p>
+                <h6 class="card-subtitle mb-md-2 text-muted text-center">
+                  <span class="desc"></span><span class="icon"></span>
+                </h6>
+              </div>
+              <div class="footer d-flex justify-content-between">
+                <p>
+                  <i class="fa-solid fa-droplet"></i>
+                  <span class="humidity"></span>%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
